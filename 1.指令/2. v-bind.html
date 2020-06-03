@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <div id="app">
+        
+        <a v-bind:href="link">go to some link</a>
+
+        <!-- class; style -->
+        <span v-bind:class="{active: isActive, 'text-danger': hasError}"> ok </span>
+    </div>
+
+
+    <!-- 真实的HTML要写在vue前面 -->
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                link: "http://www.baidu.com",
+                isActive: true,
+                hasError: true 
+
+            }    
+        })
+    </script>
+    
+</body>
+</html>

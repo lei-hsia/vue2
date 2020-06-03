@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-html解析HTML中的东西，v-text不解析 -->
+        <span v-text="msg"></span>
+        <br>
+        <span v-html="msg"></span>  
+    </div>
+    
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                msg: "<h1>msg</h1>"
+            }
+        })
+    </script>
+</body>
+</html>
