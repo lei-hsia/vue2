@@ -8,7 +8,8 @@
 <body>
     <div id="app">
         <input type="text" v-model="num">
-        <button v-on: click="num++">点赞</button>
+        <button v-on:click="num++">点赞</button>
+        <button v-on:click="cancel">取消</button>
         <h2>{{name}}, handsome; 有 {{num}}人为他点赞</h2>
     </div>
     
@@ -18,11 +19,16 @@
     <script>
         // 1. vue声明式渲染;
         let vm = new Vue({
-            el: "#app",
-            data: {
+            el: "#app",  // 绑定元素
+            data: {  // 封装数据
                 name: "zhangsan",
                 num: 1  // Vue对象要管控这个input框中的值
-            } 
+            },
+            methods: {
+                cancel() {
+                    this.num--; // 当前对象的属性num--
+                }
+            }
         });
 
         // 2. 双向绑定: 数据变页面就变；页面变数据也跟着变; 模型变=>试图变; vice versa
@@ -31,7 +37,14 @@
 
         // v-xx: 指令
 
-        // 
+        /*
+            使用vue: 
+            1. 创建vue实例，关联页面模版(el), 将自己的数据渲染到关联的模版; 响应式的
+            2. v-xx指令来简化对DOM的操作 
+            3. 声明方法来做更复杂的操作，methods里面封装方法
+        */
+
+        
 
     </script>
 </body>
