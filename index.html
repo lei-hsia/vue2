@@ -7,18 +7,31 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{name}}, handsome</h2>
+        <input type="text" v-model="num">
+        <button v-on: click="num++">点赞</button>
+        <h2>{{name}}, handsome; 有 {{num}}人为他点赞</h2>
     </div>
     
     <script src="./node_modules/vue/dist/vue.js"></script>
 
+    <!-- 页面变，数据就变, 省略了中间所有的渲染过程; MVVM模型: 页面和数据的双向绑定 -->
     <script>
+        // 1. vue声明式渲染;
         let vm = new Vue({
             el: "#app",
             data: {
-                name: "zhangsan"
+                name: "zhangsan",
+                num: 1  // Vue对象要管控这个input框中的值
             } 
         });
+
+        // 2. 双向绑定: 数据变页面就变；页面变数据也跟着变; 模型变=>试图变; vice versa
+
+        // 3. 事件处理
+
+        // v-xx: 指令
+
+        // 
 
     </script>
 </body>
